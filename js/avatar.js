@@ -13,5 +13,15 @@ const Avatar = params => {
     });
 }
 
-ReactDOM .render( el( Avatar, { id: 75, name: 'Ana María' } ), $app );
+ReactDOM .render( 
+    el( 
+        'div', 
+        null, 
+        [
+            el( Avatar, { id: 75, name: 'Ana María' } ),
+            el( Avatar, { id: 77, name: 'Luisa María' } ),
+            el( Avatar, { id: 79, name: 'Elisa María' } )
+        ]),
+        $app
+);
 
