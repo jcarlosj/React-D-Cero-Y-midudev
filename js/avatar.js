@@ -1,7 +1,6 @@
 
 const 
-    $app = document .getElementById( 'app' ),
-    el = React .createElement;
+    $app = document .getElementById( 'app' );
 
 const Avatar = params => {
     const 
@@ -9,19 +8,25 @@ const Avatar = params => {
         alt = params .name;
 
     return (
-        <div>
-            <img src={ src } alt={ alt } />
+        <picture>
+            <img 
+                src={ src } 
+                alt={ alt } 
+                onClick={ event => {
+                    event .target .classList .toggle( "disabled" );
+                }}
+            />
             <p>{ alt }</p>
-        </div>
+        </picture>
     );
 }
 
 ReactDOM .render( 
-    <picture>
+    <div>
         <Avatar id={ 75 } name={ 'Ana María' } />
         <Avatar id={ 77 } name={ 'Luisa María' } />
         <Avatar id={ 79 } name={ 'Elisa María' } />
-    </picture>,
+    </div>,
     $app
 );
 
