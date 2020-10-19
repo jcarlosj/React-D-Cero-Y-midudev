@@ -9,27 +9,19 @@ const Avatar = params => {
         alt = params .name;
 
     return (
-        el( 
-            'div', 
-            null, 
-            [
-                el( 'img', {
-                    src, alt
-                }),
-                el( 'p', {}, alt )
-            ])
+        <div>
+            <img src={ src } alt={ alt } />
+            <p>{ alt }</p>
+        </div>
     );
 }
 
 ReactDOM .render( 
-    el( 
-        'picture', 
-        null, 
-        [
-            el( Avatar, { id: 75, name: 'Ana María' } ),
-            el( Avatar, { id: 77, name: 'Luisa María' } ),
-            el( Avatar, { id: 79, name: 'Elisa María' } )
-        ]),
-        $app
+    <picture>
+        <Avatar id={ 75 } name={ 'Ana María' } />
+        <Avatar id={ 77 } name={ 'Luisa María' } />
+        <Avatar id={ 79 } name={ 'Elisa María' } />
+    </picture>,
+    $app
 );
 
