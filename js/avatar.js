@@ -8,14 +8,22 @@ const Avatar = params => {
         src = `https://randomuser.me/api/portraits/women/${ params .id }.jpg`,
         alt = params .name;
 
-    return el( 'img', {
-        src, alt
-    });
+    return (
+        el( 
+            'div', 
+            null, 
+            [
+                el( 'img', {
+                    src, alt
+                }),
+                el( 'p', {}, alt )
+            ])
+    );
 }
 
 ReactDOM .render( 
     el( 
-        'div', 
+        'picture', 
         null, 
         [
             el( Avatar, { id: 75, name: 'Ana María' } ),
