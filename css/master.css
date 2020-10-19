@@ -9,3 +9,6 @@ img {
     box-shadow: 0 0 15 #999;
     width: 100px;
 }
+img.disabled {
+    opacity: .3;
+}

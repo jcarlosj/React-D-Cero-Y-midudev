@@ -16,3 +16,9 @@ const Avatar = params => {
 $app .innerHTML += Avatar({ id: 75, name: 'Ana María' });
 $app .innerHTML += Avatar({ id: 77, name: 'Luisa María' });
 $app .innerHTML += Avatar({ id: 79, name: 'Elisa María' });
+
+$app .querySelectorAll( 'img') .forEach( img => {
+    img .addEventListener( 'click', () => {
+        img .classList .toggle( 'disabled' );
+    });
+});
