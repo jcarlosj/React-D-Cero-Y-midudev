@@ -18,3 +18,9 @@ picture.is-small {
     font-size: .72rem;
     width: 50px;
 }
+
+img.is-large,
+picture.is-large {
+    font-size: 2rem;
+    width: 200px;
+}
