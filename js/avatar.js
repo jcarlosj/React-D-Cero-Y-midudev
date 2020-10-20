@@ -3,6 +3,7 @@ const
     $app = document .getElementById( 'app' ),
     { useState, Fragment } = React;
 
+/** Avatar Component */
 const Avatar = ({ id, name='Desconocido/a', size }) => {
     const 
         [ enabled, setEnabled ] = useState( true ),
@@ -30,9 +31,23 @@ const Avatar = ({ id, name='Desconocido/a', size }) => {
                             onClick={ () => setEnabled( ! enabled ) }
                         />
                         <p>{ enabled ? name : 'Identidad oculta' }</p>
+                        <Counter />
                     </picture>
                 :   null
             }
+        </Fragment>
+    );
+}
+
+/** Counter Component */
+const Counter = () => {
+    const [ counter, setCounter ] = useState( 0 );
+
+    return (
+        <Fragment>
+            <span>{ counter }</span>
+            <button onClick={ () => setCounter( counter + 1 ) }>+</button>
+            <button onClick={ () => setCounter( counter - 1 ) }>-</button>
         </Fragment>
     );
 }
