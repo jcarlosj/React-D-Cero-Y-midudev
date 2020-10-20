@@ -30,8 +30,13 @@ const Avatar = ({ id, name='Desconocido/a', size }) => {
                             alt={ name } 
                             onClick={ () => setEnabled( ! enabled ) }
                         />
-                        <p>{ enabled ? name : 'Identidad oculta' }</p>
-                        <Counter />
+                        { enabled 
+                            ?   <Fragment>
+                                    <p>{ name }</p>
+                                    <Counter />
+                                </Fragment>
+                            :   <p>Identidad oculta</p>
+                        }
                     </picture>
                 :   null
             }

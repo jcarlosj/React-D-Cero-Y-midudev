@@ -1,6 +1,7 @@
 picture {
     display: flex;
     flex-direction: column;
+    margin: .7rem 1rem;
     text-align: center;
     width: 100px;
 }
