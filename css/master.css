@@ -11,7 +11,7 @@ img {
     width: 100px;
 }
 img.disabled {
-    opacity: .3;
+    opacity: .1;
 }
 img.is-small,
 picture.is-small {

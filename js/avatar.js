@@ -7,7 +7,6 @@ const Avatar = ({ id, name='Desconocido/a', size }) => {
     const 
         [ enabled, setEnabled ] = useState( true ),
         src = `https://randomuser.me/api/portraits/women/${ id }.jpg`,
-        alt = name,
         imgClassName = enabled ? '' : 'disabled';
 
     const getSize = () => {
@@ -27,10 +26,10 @@ const Avatar = ({ id, name='Desconocido/a', size }) => {
                         <img 
                             className={ `${ getSize() } ${ imgClassName }` }
                             src={ src } 
-                            alt={ alt } 
+                            alt={ name } 
                             onClick={ () => setEnabled( ! enabled ) }
                         />
-                        <p>{ alt }</p>
+                        <p>{ enabled ? name : 'Identidad oculta' }</p>
                     </picture>
                 :   null
             }
