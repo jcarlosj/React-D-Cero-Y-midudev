@@ -1,20 +1,22 @@
 
 const 
-    $app = document .getElementById( 'app' );
+    $app = document .getElementById( 'app' ),
+    useState = React .useState;
 
-const Avatar = params => {
+const Avatar = props => {
     const 
-        src = `https://randomuser.me/api/portraits/women/${ params .id }.jpg`,
-        alt = params .name;
+        [ enabled, setEnabled ] = useState( true ),
+        src = `https://randomuser.me/api/portraits/women/${ props .id }.jpg`,
+        alt = props .name,
+        className = enabled ? '' : 'disabled';
 
     return (
         <picture>
             <img 
+                className={ className }
                 src={ src } 
                 alt={ alt } 
-                onClick={ event => {
-                    event .target .classList .toggle( "disabled" );
-                }}
+                onClick={ () => setEnabled( ! enabled ) }
             />
             <p>{ alt }</p>
         </picture>
