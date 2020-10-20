@@ -41,13 +41,29 @@ const Avatar = ({ id, name='Desconocido/a', size }) => {
 
 /** Counter Component */
 const Counter = () => {
-    const [ counter, setCounter ] = useState( 0 );
+    const [ votes, setVotes ] = useState({
+        likes: 0,
+        unlikes: 0,
+        total: 0
+    });
 
     return (
         <Fragment>
-            <span>{ counter }</span>
-            <button onClick={ () => setCounter( counter + 1 ) }>+</button>
-            <button onClick={ () => setCounter( counter - 1 ) }>-</button>
+            <span>Votos { votes .total }</span>
+            <button onClick={ () => { 
+                setVotes({
+                    ...votes,
+                    likes: votes .likes + 1,
+                    total: votes .total + 1
+                }); 
+            } }>like ({ votes .likes })</button>
+            <button onClick={ () => { 
+                setVotes({
+                    ...votes,
+                    unlikes: votes .unlikes + 1,
+                    total: votes .total + 1
+                });
+            } }>unlike ({ votes .unlikes })</button>
         </Fragment>
     );
 }
