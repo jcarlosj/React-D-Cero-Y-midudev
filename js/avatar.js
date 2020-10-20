@@ -8,12 +8,13 @@ const Avatar = props => {
         [ enabled, setEnabled ] = useState( true ),
         src = `https://randomuser.me/api/portraits/women/${ props .id }.jpg`,
         alt = props .name,
-        className = enabled ? '' : 'disabled';
+        smallClassName = props .size === 'small' ? 'is-small' : '',
+        imgClassName = enabled ? '' : 'disabled';
 
     return (
-        <picture>
+        <picture className={ smallClassName }>
             <img 
-                className={ className }
+                className={ `${ smallClassName } ${ imgClassName }` }
                 src={ src } 
                 alt={ alt } 
                 onClick={ () => setEnabled( ! enabled ) }
@@ -25,7 +26,7 @@ const Avatar = props => {
 
 ReactDOM .render( 
     <div>
-        <Avatar id={ 75 } name={ 'Ana María' } />
+        <Avatar id={ 75 } name={ 'Ana María' } size="small" />
         <Avatar id={ 77 } name={ 'Luisa María' } />
         <Avatar id={ 79 } name={ 'Elisa María' } />
     </div>,

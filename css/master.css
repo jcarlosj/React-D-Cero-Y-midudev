@@ -4,6 +4,7 @@ picture {
     text-align: center;
     width: 100px;
 }
+
 img {
     border-radius: 50%;
     box-shadow: 0 0 15 #999;
@@ -11,4 +12,9 @@ img {
 }
 img.disabled {
     opacity: .3;
+}
+img.is-small,
+picture.is-small {
+    font-size: .72rem;
+    width: 50px;
 }
